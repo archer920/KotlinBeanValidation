@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Kotlin Spring Validation</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="jumbotron">
+    <div class="container">
+        <h1>Welcome to Kotlin</h1>
+        <p th:text="${welcomeMessage}">Congratulations Bob Belcher</p>
+        <div class="row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                First Name
+            </div>
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <span th:text="${user.firstName}">Bob</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                Last Name
+            </div>
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <span th:text="${user.lastName}">Belcher</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                Email Address
+            </div>
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <span th:text="${user.email}">bobs.bugers@bobby.com</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                Phone Number
+            </div>
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <span th:text="${user.phone}">920.867.5309</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                Street Address
+            </div>
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <span th:text="${user.address}">111 Circle Drive</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                City
+            </div>
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <span th:text="${user.city}">Randolph</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                State
+            </div>
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <span th:text="${user.state}">WI</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                Zip
+            </div>
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <span th:text="${user.zip}">53956</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

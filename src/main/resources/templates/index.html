@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Kotlin Spring Validation</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="jumbotron">
+    <div class="container">
+        <h1>Welcome to Kotlin</h1>
+        <p>This demonstrates Spring Validation with Kotlin</p>
+        <form action="POST" method="post" role="form" th:action="@{/}" th:object="${user}">
+            <legend>Enter Registration Information Here</legend>
+
+            <div th:class="${#fields.hasErrors('firstName') ?'form-group has-error' : 'form-group'}">
+                <label for="first_name" class="col-sm-2 control-label">First Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="first_name" placeholder="First Name..."
+                           th:field="*{firstName}"/>
+                    <span th:each="err: ${#fields.errors('firstName')}" class="help-block" th:text="${err}"></span>
+                </div>
+            </div>
+            <div th:class="${#fields.hasErrors('lastName') ?'form-group has-error' : 'form-group'}">
+                <label for="last_name" class="col-sm-2 control-label">Last Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="last_name" placeholder="Last Name..."
+                           th:field="*{lastName}"/>
+                    <span th:each="err: ${#fields.errors('lastName')}" class="help-block" th:text="${err}"></span>
+                </div>
+            </div>
+            <div th:class="${#fields.hasErrors('email') ?'form-group has-error' : 'form-group'}">
+                <label for="email" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="email" placeholder="Email Address..."
+                           th:field="*{email}"/>
+                    <span th:each="err: ${#fields.errors('email')}" class="help-block" th:text="${err}"></span>
+                </div>
+            </div>
+            <div th:class="${#fields.hasErrors('phone') ?'form-group has-error' : 'form-group'}">
+                <label for="phone_number" class="col-sm-2 control-label">Phone Number</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="phone_number" placeholder="Phone Number..."
+                           th:field="*{phone}"/>
+                    <span th:each="err: ${#fields.errors('email')}" class="help-block" th:text="${err}"></span>
+                </div>
+            </div>
+            <div th:class="${#fields.hasErrors('address') ?'form-group has-error' : 'form-group'}">
+                <label for="address" class="col-sm-2 control-label">Street Address</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="address" placeholder="Street Address..."
+                           th:field="*{address}"/>
+                    <span th:each="err: ${#fields.errors('address')}" class="help-block" th:text="${err}"></span>
+                </div>
+            </div>
+            <div th:class="${#fields.hasErrors('city') ?'form-group has-error' : 'form-group'}">
+                <label for="city" class="col-sm-2 control-label">City</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="city" placeholder="City..." th:field="*{city}"/>
+                    <span th:each="err: ${#fields.errors('city')}" class="help-block" th:text="${err}"></span>
+                </div>
+            </div>
+            <div th:class="${#fields.hasErrors('state') ?'form-group has-error' : 'form-group'}">
+                <label for="state" class="col-sm-2 control-label">State</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="state" placeholder="State..." th:field="*{state}"/>
+                    <span th:each="err: ${#fields.errors('state')}" class="help-block" th:text="${err}"></span>
+                </div>
+            </div>
+            <div th:class="${#fields.hasErrors('zip') ?'form-group has-error' : 'form-group'}">
+                <label for="zip" class="col-sm-2 control-label">Zip Code</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="zip" placeholder="Zip..." th:field="*{zip}"/>
+                    <span th:each="err: ${#fields.errors('zip')}" class="help-block" th:text="${err}"></span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
